@@ -8,7 +8,14 @@
         </div>
 
         <div class="col-9">
-            side info here
+            <div>
+                <h1> {{$user -> username}} </h1>
+            </div>
+            <div>
+                <div class="pt-4 font-weight-bold"> {{$user->profile->title}} </div>
+                <div> {{$user->profile->description}} </div>
+                <div><a href="#"> {{$user->profile->url}} </a></div>
+            </div>
         </div>
    </div>
 
