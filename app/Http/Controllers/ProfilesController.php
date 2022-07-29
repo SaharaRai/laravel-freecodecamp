@@ -9,8 +9,8 @@ class ProfilesController extends Controller
 {
     public function index($user)
     {   
-        $data = User::find($user);
-        return view('home', [
+        $data = User::findOrFail($user);
+        return view('layouts.profiles.index', [
             'user' => $data,
         ]);
     }
