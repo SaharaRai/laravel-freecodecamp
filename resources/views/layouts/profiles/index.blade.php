@@ -10,7 +10,7 @@
         <div class="col-9">
             <div class="d-flex justify-content-between">
                 <h1> {{$user -> username}} </h1>
-                <a href="#">Add new post</a>
+                <a href="/p/create">Add new post</a>
             </div>
             <div>
                 <div class="pt-4 font-weight-bold"> {{$user->profile->title}} </div>
@@ -21,15 +21,11 @@
    </div>
 
    <div class="row pt-4">
+    @foreach($user-> posts as $post)
     <div class="col-4">
-        <img src="https://images.unsplash.com/photo-1549407246-5b3d1fe7b9f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dGliZXRpYW5mbGFnc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="photo" class="w-100">
+        <img src="/storage/{{$post -> image}}" alt="photo" class="w-100">
     </div>
-    <div class="col-4">
-        <img src="https://images.unsplash.com/photo-1549407246-5b3d1fe7b9f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dGliZXRpYW5mbGFnc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="photo" class="w-100">
-    </div>
-    <div class="col-4">
-        <img src="https://images.unsplash.com/photo-1549407246-5b3d1fe7b9f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dGliZXRpYW5mbGFnc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="photo" class="w-100">
-    </div>
+    @endforeach
 
    </div>
 </div>
